@@ -1,0 +1,7 @@
+*.pyc
+data/
+feature/
+*~
+start_test.py
+test/data/*snapshot
+test/test_semut.py
