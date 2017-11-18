@@ -1,0 +1,43 @@
+t_user：
+	age one-hot编码
+	sex 
+	日期:激活日期按照测试跨时间
+	初始额度：
+		钱的脱敏处理：真实值=5^加密值-1
+				加密值=log5(真实值+1)
+	age 计算各个年龄段的平均值，最大值，最小值，总值，平均分期，总分期，总值/总分期
+特征衍生 （除法）
+t_order：
+	剔除异常值：空值（只有uid time） price*数量<discount cate_id为空
+	
+	cate_id进行one-hot编码，目前只是1代替。
+	one-hot之后的特征提取，待定
+	
+	（order qty discount）  （total min max mean std。。）（day_diff）
+	total   discount/qty*price
+	
+	
+	
+t_click:
+	day_diff click count
+	按照uid group by 计算click_gap ，提取day_diff 的total_click_count、mean_click_count,click_count_std。。。
+	
+	
+	pid param one-hot计算总的点击次数
+				
+				
+				
+	统计哪些是新用户，哪些是老用户，
+
+t_loan ：
+	添加limit、添加order_total_amount
+		过去1月、2月、3月 amount/plannum
+		之前的想一想哪些
+		loan_amount,plannum: min,max,mean,total
+		order_total_amount/limit
+		day_diff： loan_count、loan_amount,loan_amount/limit,loan_amount/order_total_amount 
+	
+	
+	
+	
+	分群体预测：11月份贷过款之间也贷过款的用户的比例
